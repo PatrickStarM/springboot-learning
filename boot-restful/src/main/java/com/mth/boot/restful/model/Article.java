@@ -24,17 +24,14 @@ import java.util.List;
 @Builder
 @JsonPropertyOrder(value = {"content", "title"})
 public class Article {
-    @JsonIgnore
     private Long id;
-    @JsonProperty("writer")
     private String author;
     private String title;
     private String content;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
-    private Date updateTime;
-    private List<Reader> readerList = new ArrayList<>();
+    private List<Reader> list = new ArrayList<>();
 
 
 }

@@ -22,43 +22,52 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
  * @date: 2022/3/13
  **/
 @Slf4j
-@SpringBootTest
 @AutoConfigureMockMvc
+@SpringBootTest
 @ExtendWith(SpringExtension.class)
 public class ArticleControllerTest {
     //mock对象
+//    private static MockMvc mockMvc;
+    //在所有测试⽅法执⾏之前进⾏mock对象初始化
     @Resource
-    private MockMvc mockMvc;
+    private  MockMvc mockMvc;
 
-    //在所有测试方法执行之前进行mock对象初始化
-//    @BeforeAll
+    //    @BeforeAll
 //    static void setUp() {
-//        mockMvc = MockMvcBuilders.standaloneSetup(new ArticleController()).build();
+//        mockMvc = MockMvcBuilders.standaloneSetup(new
+//                ArticleController()).build();
 //    }
-
-    //测试方法
+    //测试⽅法
     @Test
     public void saveArticle() throws Exception {
         String article = """
-               {
-                    "id": 1,
-                    "author": "mth",
-                    "title": "SpringBoot",
-                    "content": "SpringBoot",
-                    "createTime": "2022-03-13 11:41:01",
-                    "readerList":[{"name":"aaa","age":18},{"name":"bbb","age":20}]
-               }""";
+                               {
+                                    "id": 1,
+                        "author": "mqxu",
+                "title": "SpringBoot",
+                "content": "SpringBoot",
+                "createTime": "2022-03-12 12:12:12",
+                "readerlist":[{"name":"aaa","age":18},
+                {"name":"bbb","age":20}]
+                               }
+                               """;
         MvcResult result = mockMvc.perform(
-                        MockMvcRequestBuilders.request(HttpMethod.POST, "/api/v1/articles/body").contentType("application/json").content(article))
+                        MockMvcRequestBuilders
+                                .request(HttpMethod.POST, "/api/v1/articles/body")
+                                .contentType("application/json")
+                                .content(article)
+                )
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.data.author").value("mth"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.data.readerList[0].age").value(18))
-                .andDo(print()).andReturn();
+//HTTP:status 200
+
+                .andExpect(MockMvcResultMatchers.jsonPath("$.data.author").value("mqxu"))
+
+
+                .andDo(print())
+                .andReturn();
         result.getResponse().setCharacterEncoding("UTF-8");
         log.info(result.getResponse().getContentAsString());
-
-
     }
 
-
 }
+

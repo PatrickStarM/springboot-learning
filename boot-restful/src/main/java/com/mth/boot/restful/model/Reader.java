@@ -19,9 +19,6 @@ import java.io.Serializable;
 @Builder
 public class Reader implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -3713984918527477343L;
-
     private String name;
     private Integer age;
 
