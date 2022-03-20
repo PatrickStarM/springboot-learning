@@ -1,0 +1,17 @@
+user:
+  name: ENC(FGdYNKZdUU4e2xe9vwDJVEU/FEjtLSzu20ElUlURpyY3kUMs5AXnhMU9N6g5Jl2q)
+  age: ENC(TKKug5nHBMSE0ysPFy4IFwxiNY36+q8hpZXfHEE1r2/DqLhVWhARYOcLudSbEy6k)
+  book:
+    name: Abook
+    price: 100
+    publish: 2021-3-14 10:10:10
+
+# jasypt加密的密匙
+jasypt:
+  encryptor:
+    password: Y6M9fAJQdU7jNp5MW
+
+
+#       name: B book
+#      price: 200
+#      publish: 2021-3-15

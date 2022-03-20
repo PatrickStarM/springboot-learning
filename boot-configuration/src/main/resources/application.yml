@@ -1,0 +1,23 @@
+#family:
+#  family-name: "happy family"
+#  father:
+#    name: tom
+#    age: 30
+#    email: aaa@qq.com
+#  mother:
+#    alias:
+#      - rose
+#      - alice
+#  child:
+#    name: jack
+#    age: 6
+#    friends:
+##      - {}
+#      - hobby: football
+#        gender: male
+#      - hobby: sing
+#        gender: female
+
+#指定需要使用的配置文件
+spring:
+  port: 8888
